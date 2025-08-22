@@ -36,6 +36,28 @@ Producers generate car part messages, Kafka brokers handle event streaming, cons
 ```
 
 ---
+### Kafka Topics & Partitions
+
+- **Topic:** `parts_topic` – the main channel for car part events.
+
+- **Partitions:** 1 (for simplicity in this project).
+
+- **Producers:** Publishes car part messages to `parts_topic`.
+
+- **Consumers:** Subscribes to the topic and process messages from the one partition in this project
+
+**Example usage:**
+
+```python
+# Producer sends to topic
+producer.send("parts_topic", message)
+
+# Consumer reads from topic
+consumer.subscribe(["parts_topic"])
+```
+---
+
+## To Use This Repository
 
 ### 1. Clone the repository
 ```bash
