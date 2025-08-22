@@ -78,7 +78,9 @@ services:
     restart: always
     networks:
       - bmw-net
-
+    env_file:
+      - ./docker/kafka/.env
+  
   kafka-consumer:
     build: ./docker/kafka
     depends_on:
@@ -87,6 +89,8 @@ services:
     restart: always
     networks:
       - bmw-net 
+    env_file:
+    - ./docker/kafka/.env
 
 networks:
   bmw-net:
