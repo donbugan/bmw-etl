@@ -101,7 +101,7 @@ docker compose down -v
 - Docker is configured with at least 8 GB RAM.
 - If Airflow webserver crashes with PID errors:
 ```bash
-docker compose rm -f airflow-webserver
-docker compose up -d airflow-webserver
+docker compose rm -f bmw-etl-airflow-webserver-1
+docker compose up -d bmw-etl-airflow-webserver-1
 ```
 
