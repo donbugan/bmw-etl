@@ -1,12 +1,3 @@
--- Database Creation
-DO $$
-BEGIN
-    IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'carpartsdb') THEN
-        CREATE DATABASE carpartsdb;
-    END IF;
-END
-$$;
-
 -- Set the search path
 SET search_path TO parts_catalog, vendors_data, audit_logs;
 
@@ -23,7 +14,7 @@ CREATE ROLE parts_reader WITH LOGIN PASSWORD 'PASSWORD';
 CREATE ROLE vendor_reader WITH LOGIN PASSWORD 'PASSWORD';
 
 -- Grants for roles
-GRANT ALL PRIVILEGES ON DATABASE carpartsdb TO admin_user;
+GRANT ALL PRIVILEGES ON DATABASE carparts TO admin_user;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA parts_catalog TO parts_admin;
 ALTER DEFAULT PRIVILEGES IN SCHEMA parts_catalog GRANT ALL ON TABLES TO parts_admin;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA vendors_data TO vendor_admin;
