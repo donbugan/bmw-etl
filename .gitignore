@@ -1,6 +1,6 @@
 # Ignore Python virtual environments
 etl-venv/
-.env/
+.env
 .venv/
 
 # Byte-compiled / cache files
